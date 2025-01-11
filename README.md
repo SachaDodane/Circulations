@@ -1,3 +1,3 @@
 # Circulations
 
-Sacha Dodane et Dimitri Walczack
+Sacha Dodane et Dimitri walczak
