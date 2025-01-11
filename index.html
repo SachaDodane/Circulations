@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vélos & Qualité de l'air et COVID</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Notre CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Informations en temps réel</h1>
+        <p class="last-update">Dernière mise à jour : <span id="update-time"></span></p>
+    </header>
+
+    <main>
+        <section id="location-info">
+            <h2>Votre position</h2>
+            <p id="current-location">Chargement de votre position...</p>
+            <p id="ip-location"></p>
+        </section>
+
+        <section id="recommendation-section">
+            <h2>Recommandation Vélo</h2>
+            <div id="bike-recommendation" class="recommendation-container">
+                Analyse des conditions en cours...
+            </div>
+        </section>
+
+        <section id="bikes-section">
+            <h2>Vélos partagés</h2>
+            <div id="map"></div>
+            <p class="last-update">Dernière mise à jour des données vélos : <span id="bikes-update-time"></span></p>
+        </section>
+
+        <section id="air-quality">
+            <h2>Qualité de l'air</h2>
+            <div id="air-quality-info"></div>
+            <p class="last-update">Dernière mise à jour de la qualité de l'air : <span id="air-update-time"></span></p>
+        </section>
+
+        <section id="weather-section">
+            <h2>Météo</h2>
+            <div id="weather-info"></div>
+            <p class="last-update">Dernière mise à jour météo : <span id="weather-update-time"></span></p>
+        </section>
+
+        <section id="covid-data">
+            <h2>Données COVID-19</h2>
+            <div class="charts-container">
+                <div class="chart-wrapper">
+                    <canvas id="covidChart1"></canvas>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="covidChart2"></canvas>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="covidChart3"></canvas>
+                </div>
+            </div>
+            <p class="last-update">Dernière mise à jour COVID : <span id="covid-update-time"></span></p>
+        </section>
+    </main>
+
+    <footer>
+        <h3>Sources des données :</h3>
+        <ul id="api-sources">
+            <li>Vélos : <a href="https://api.cyclocity.fr/contracts/nancy/gbfs/station_information.json" target="_blank">API VélOstan'lib</a></li>
+            <li>Qualité de l'air : <a href="https://aqicn.org/api/" target="_blank">API WAQI</a></li>
+            <li>Météo : <a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap API</a></li>
+            <li>COVID-19 : <a href="https://www.data.gouv.fr/fr/datasets/donnees-relatives-aux-resultats-des-tests-virologiques-covid-19/" target="_blank">data.gouv.fr</a></li>
+        </ul>
+        <p>
+            <a href="https://github.com/SachaDodane/Circulations" target="_blank">Code source sur GitHub</a>
+        </p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
